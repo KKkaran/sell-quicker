@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/KKkaran/ecommerce_app#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.14.1"
