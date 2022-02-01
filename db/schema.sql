@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS ecommerce_app;
+DROP DATABASE IF EXISTS test_project;
 
-CREATE DATABASE ecommerce_app;
+CREATE DATABASE test_project;
