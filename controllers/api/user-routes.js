@@ -33,6 +33,7 @@ router.get('/', (req, res) => {
 
 //get user by id
 router.get('/:id', (req, res) => {
+  console.log("*********************in *******************")
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {

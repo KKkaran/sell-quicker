@@ -51,7 +51,44 @@ router.get('/', (req, res) => {
           res.status(500).json(err);
         });
     });
-
+    router.get('/users/:id',(req,res)=>{
+      console.log("in specif users dashboard")
+      User.findOne({
+          where:{
+              id: req.params.id
+          },
+          
+          include:[
+              {
+                  model:Post,
+                  order:[['createdAt','DESC']],
+              },
+              {
+                  model:Comment,
+                  include:[
+                      {
+                          model:Post
+                      }
+                  ]
+              }
+          ]
+      })
+      .then(db=>{
+          console.log(db)
+          const posts = db.get({plain:true})
+          const postss = posts.posts;
+          console.log(posts.username)
+          postss.map(r=>{
+               r.date = require("moment")(r.createdAt).format("LLLL")
+          })
+          
+          console.log(postss)
+          res.json({
+              posts:postss.reverse(),
+              username:posts.username
+          })
+      })
+  })
 // get single post
 router.get('/singlePost/:id',(req,res)=>{
     

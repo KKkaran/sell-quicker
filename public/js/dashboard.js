@@ -42,6 +42,7 @@ const getId = async(e)=>{
 
 //this is called when page refreshes to get the user id and get all his posts to display in the dashboard stuff.
 const getId2 = async(e)=>{
+    console.log("in history")
     const res = await fetch('/api/users/session',{
         method:'get'
     })
