@@ -1,0 +1,37 @@
+<br>  
+    <div class="container card">
+            <div class="card-header">
+    
+                <div class="d-flex justify-content-between">
+                    <div><strong>{{updatedPost.post.title}}</strong> by <strong>{{updatedPost.post.user.username}}</strong></div> <div> {{updatedPost.post.date}}</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-text">{{updatedPost.post.description}} </h4>
+                <div>
+                    <p><h5>Comments:</h5>
+                    {{#each updatedPost.post.comments as |c|}} 
+                        {{c.comment_text}} ------- {{c.user.username}}
+                        <br> 
+                    {{/each}}
+                </p>
+                </div>
+            </div>            
+    </div>
+
+    <div class="container">
+        <form class="addComment">
+            <div class="form-group">
+                <br><br>
+                <input type="text" class="form-control" id="commentText" aria-describedby="emailHelp" placeholder="Leave a Comment..." required>
+            </div>
+        <br>
+            <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+
+
+    </div>
+
+
+<script src="/js/singlepost.js"></script>
+    

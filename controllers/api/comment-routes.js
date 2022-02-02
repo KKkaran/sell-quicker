@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comments, Categories,Posts, Users } = require('../../models');
+const { Comment, Category,Post, User } = require('../../models');
 
 // The `/api/comments` endpoint
 
@@ -7,13 +7,7 @@ const { Comments, Categories,Posts, Users } = require('../../models');
 router.get('/', (req, res) => {
   // find all comments
   // be sure to include its associated Category and Tag data
-  Comments.findAll({
-    include: [
-      {
-        model: Comments
-      }
-    ]
-  })
+  Comment.findAll()
   .then(commentsData => res.json(commentsData))
   .catch(err => {
     console.log(err);
@@ -40,14 +34,19 @@ router.get('/:id', (req, res) => {
 
 // create new comment
 router.post('/', (req, res) => {
-  Comments.create(req.body)
-    .then((newComment) => {
-      res.json(newComment);
+  Comment.create({
+      comment_text: req.body.comment_text,
+      user_id: req.body.user_id,
+      post_id: req.body.post_id
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+      .then(dbCommentData => res.json({
+        success:"good",
+        dbCommentData:dbCommentData
+      }))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
 });
 
 // update comments

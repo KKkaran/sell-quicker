@@ -5,7 +5,8 @@ const { Post, User, Comment, Category } = require('../models');
 // get all posts for homepage
 router.get('/', (req, res) => {
   Post.findAll({
-          include: [
+    order:[['updatedAt','DESC']],
+    include: [
             {
               model: Comment,
               include: {
@@ -34,7 +35,10 @@ router.get('/', (req, res) => {
       })
         const posts = {
           posts: post,
-          categories: categories
+          categories: categories,
+          login:req.session.loggedIn,
+          username:req.session.username
+
         }
         console.log(posts)
         res.render("homepage",{posts})
@@ -49,52 +53,56 @@ router.get('/', (req, res) => {
     });
 
 // get single post
-router.get('/post/:id', (req, res) => {
-    console.log('to get advt based on id');
-  /*Post.findOne({
-    where: {
-      id: req.params.id
-    },
-    attributes: [
-      'id',
-      'post_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+router.get('/singlePost/:id',(req,res)=>{
+    
+  if(!req.session.loggedIn){
+      res.render('login')
+      return
+  }
+  Post.findOne({
+      where:{
+          id: req.params.id
       },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
+      include:[
+          {
+              model:User,
+              attributes:['username'],
+              foreignKey:'id'
+          },
+          {
+              model:Comment,
+              foreignKey:'user_id',
+              attributes:['comment_text'],
+              include:[
+                  {
+                      model:User,
+                      foreignKey:'id',
+                      attributes:['username']
+                  }
+              ]
+              
+          }
+      ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
-        return;
+  .then(db=>{
+      const post = db.get({plain:true})
+      // const g = post.map(r=>{
+      //     r.date = require("moment")(r.createdAt).format("LLLL")
+      // })
+      const ggg = post.createdAt;
+      post.date = require("moment")(ggg).format("LLLL")
+      const updatedPost = {
+          post:post,
+          //userId:req.session.user_id
       }
-
-      const post = dbPostData.get({ plain: true });
-
-      res.render('single-post', {
-        post,
-        loggedIn: req.session.loggedIn
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });*/
-});
+      res.render('singlePost', {updatedPost});
+      console.log(updatedPost)
+  })
+  .catch(er=>{
+      console.log(er);
+      res.status(500).json(er)
+  })
+})
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -104,5 +112,30 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+router.get('/logout',(req,res)=>{
+  if(req.session.loggedIn){
+      req.session.destroy(()=>{
+          res.render("login")
+          return
+      })
+  }
+  res.render('login')
+})
+router.get('/dashboard',(req,res)=>{
+    
+  if(!req.session.loggedIn){
+      res.render('login')
+      return
+  }
+  Category.findAll().then(categoryData => {
+    const categories = categoryData.map(r=>r.get({plain:true}))
+    console.log(categories)
+    const categ = {
+      categories: categories
+    }
+    res.render('dashboard',{categ})
+  })
+    
 
+})
 module.exports = router;

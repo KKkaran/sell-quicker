@@ -1,0 +1,43 @@
+<div class="container p-3 dashboard">
+    
+    <form>
+    <div class="form-group">
+        <label for="postTitle">Title of Post:</label>
+        <input type="text" class="form-control" id="postTitle" placeholder="title goes here..." required>
+    </div>
+    
+        <br>
+    <div class="form-group">
+        <label for="description">Post Description:</label>
+        <textarea class="form-control" id="description" rows="8" required></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+        
+        <select name="categories" id="categ">
+            <option value="">Pick a category</option>
+                {{#each categ.categories as |c|}}
+                    <option value={{c.id}}>{{c.category_name}}</option>
+                {{/each}}
+        </select>
+    </div>
+        <br>
+    <div>
+        <button type="submit" class="btn btn-primary go">POST</button>
+    </div>
+    </form>
+</div>
+
+<div class="container hh">
+        
+        <h2>History:</h2>
+       <div class="oldPosts">
+
+       </div>
+</div>
+
+
+
+
+
+<script src="/js/dashboard.js"></script>

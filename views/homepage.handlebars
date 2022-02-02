@@ -1,3 +1,12 @@
+<div class="container header">
+        <h2>Welcome, 
+            {{#if posts.login}}
+                {{posts.username}}
+            {{else}}
+                Guest
+            {{/if}}
+        </h2>
+</div>
 <div class="container">
     <div>
         <select name="categories" id="categ">
