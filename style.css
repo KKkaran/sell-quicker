@@ -51,4 +51,338 @@
     margin-bottom: 20px;
   }
   
+  .show-menu {
+    display: none;
+  }
+  .show-menu,
+  .close-menu {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+  }
+  .close-menu {
+    width: 70%;
+    background-color: var(--white);
+    padding-bottom: 10px;
+    padding-left: 30px;
+  }
+  .show-menu i,
+  .close-menu i {
+    display: block;
+    color: var(--title-color);
+    line-height: 24px;
+  }
   
+  nav {
+    margin-left: 20px;
+    justify-self: flex-start;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  li {
+    margin-right: 15px;
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+  li a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--link-color);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--white);
+    transition: 0.3s ease;
+  }
+  
+  li a:hover {
+    border-bottom-color: var(--orange);
+    color: var(--title-color);
+  }
+  li a{
+    cursor: pointer;
+  }
+  nav.mobile {
+    display: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: -35px;
+    height: auto;
+    z-index: 111111;
+  }
+  nav.mobile ul {
+    width: 70%;
+    height: 100vh;
+    background-color: var(--white);
+    display: block;
+    padding: 20px;
+    padding-left: 30px;
+    border: none;
+  }
+  nav.mobile ul li {
+    margin-bottom: 15px;
+  }
+  nav.mobile ul li a {
+    color: var(--title-color);
+  }
+  @media screen and (max-width: 560px) {
+    header {
+      /* padding-left: 10px; */
+      padding-right: 10px;
+      border-bottom: none;
+    }
+    .show-menu {
+      display: block;
+    }
+    .logo {
+      width: 100px;
+    }
+    nav {
+      display: none;
+    }
+  }
+  
+  /*workink with javascript*/
+  .message {
+    display: none;
+    position: absolute;
+    top: 43px;
+    right: -60px;
+    width: 250px;
+    height: 150px;
+    padding-bottom: 20px;
+  }
+  @media screen and (max-width: 400px) {
+    .message {
+      top: 48px;
+      left: -203px;
+      right: unset;
+      min-width: 250px;
+      z-index: 111111;
+      box-shadow: unset;
+    }
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px;
+  }
+  .num-of-item {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--notif-colr);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    z-index: 1111;
+  }
+  
+  .num-of-item img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+  }
+  .num-of-item p {
+    font-size: 12px;
+    text-align: left;
+  }
+  .num-of-item .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /**/
+  
+  
+  /*end of header*/
+  p {
+    font-size: 16px;
+  }
+  
+  /*style for main section*/
+  #main-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  #main-section > div {
+    width: 40%;
+    /* height: 300px; */
+    height: 70%;
+  }
+  
+  .main-image {
+    width: 90%;
+    height: 50%;
+    cursor: pointer;
+  }
+  .main-image img {
+    width: 90%;
+    height: 50%;
+    border-radius: 6px;
+  }
+  
+  /*workink with javascript*/
+  .thumb-nail {
+    margin-top: 15px;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /*working with show container*/
+  
+  #main-section {
+    position: relative;
+  }
+  .show {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 111;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+  }
+  .show-content {
+    max-width: 400px;
+    max-height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main-image {
+    position: relative;
+  }
+  /*i get to this point
+  and  am fixing the show container*/
+  .show-content .left,
+  .show-content .right,
+  .show-content .close-shower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .show-content .close-shower {
+    top: -16px;
+    right: -10px;
+    text-align: center;
+  }
+  .show-content .close-shower i {
+    display: block;
+    cursor: pointer;
+    color: var(--orange);
+  }
+  .show-content .close-shower i:hover {
+    color: var(--title-color);
+  }
+  .show-content .right,
+  .show-content .left {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--white);
+  }
+  .show-content .right {
+    right: -15px;
+  }
+  .show-content .right i,
+  .show-content .left i {
+    color: var(--orange);
+    display: block;
+    width: 100%;
+    line-height: 28px;
+  }
+  .show-content .left {
+    left: -15px;
+  }
+  .show-content .thumb-nail {
+    height: 80px;
+  }
+  /*working with show container*/
+  .shower span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: var(--white);
+    border-radius: 50%;
+    text-align: center;
+  }
+  .shower span i {
+    color: var(--orange);
+    font-weight: 700;
+    line-height: 32px;
+  }
+  
+  .thumb-nail img {
+    /* height: 60px; */
+    width: 20%;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--white);
+  }
+  img.active {
+    opacity: 0.4;
+    border-color: var(--orange);
+  }
+  .thumb-nail img:hover {
+    opacity: 0.4;
+  }
+  @media screen and (max-width: 760px) {
+    #page {
+      max-width: 760px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    #main-section {
+      align-items: stretch;
+      max-width: 100%;
+    }
+    #main-section > div {
+      width: 48%;
+      justify-content: space-between;
+    }
+    .details > * {
+      margin-bottom: 10px;
+    }
+    .price {
+      display: flex;
+      justify-content: space-between;
+    }
+    .quantity,
+    .add-item {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .quantity {
+      width: 40%;
+    }
+    .add-item button {
+      text-align: left;
+      font-size: 12px;
+    }
+  }
