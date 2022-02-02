@@ -77,19 +77,18 @@ router.post('/', (req, res) => {
   })
     .then(dbUserData => {
         req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true; //remove these commentd when sessionis added
-  
-        res.json(dbUserData);
-     // });
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+          req.session.loggedIn = true; //remove these commentd when sessionis added
+    
+          res.json(dbUserData);
+      });
     })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
   });
-})
 
 //find users based on email id 
 // expects {email: 'savvy@gmail.com', password: 'password1234'}
