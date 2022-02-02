@@ -7,28 +7,34 @@
 </head>
 <body>
     <!-- container -->
-    <div class="bg-gray-900 text-emerald-500 h-screen">
+    <div class="bg-gray-900 text-emerald-500 h-screen w-screen">
         <!-- header -->
-        <div class="">
-            <div class="nav-bar">
-                <h1 class="title">
+        <div class=" flex justify-between ml-8 mr-8">
+            <div class="p-10">
+                <h1 class="font-mono text-xl">
                     Ecommerce
                 </h1>
-                <!-- nav bar -->
-                <nav class="">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Info</a></li>
+            </div>
+           
+            <!-- nav bar -->
+            <div class="">
+                <nav class="p-10">
+                    <ul class="flex justify-between font-mono">
+                        <li class="pl-5 pr-5"><a href="#">Home</a></li>
+                        <li class="pl-5 pr-5"><a href="#">About</a></li>
+                        <li class="pl-5 pr-5"><a href="#">Info</a></li>
                     </ul>
                 </nav>
             </div>
+            
         </div>
+        
 
-        <!-- sign up form -->
-        <div class="flex justify-between border border-red-500">
+       
+        <div class="flex justify-between  ml-8 mr-8">
+             <!-- sign up form -->
             <div class=" flex-auto m-10">
-                <form class="bg-gray-900 text-emerald-500 shadow-md border border-white rounded  px-8 pt-6 pb-8 mb-4">
+                <form class="font-mono bg-gray-900 text-emerald-500 shadow-md border border-white rounded  px-8 pt-6 pb-8 mb-4">
                     <div class="mb-4">
                     <label class="block text-sm font-bold mb-2" for="username">
                         Username
@@ -45,7 +51,7 @@
                     <label class="block t text-sm font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
+                    <input class="shadow appearance-none border border-white rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
                     </div>
                     <div class="flex items-center justify-between">
                     <button class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
@@ -58,8 +64,8 @@
             </div>
     
             <!-- login form -->
-            <div class="flex-auto m-10">
-                <form class="bg-gray-900 text-emerald-500 border border-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="flex flex-auto m-10 ">
+                <form class="font-mono flex-auto bg-gray-900 text-emerald-500 border border-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="mb-4">
                     <label class="block text-emerald-500 text-sm font-bold mb-2" for="username">
                         Username
@@ -70,7 +76,7 @@
                     <label class="block text-emerald-500 text-sm font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
+                    <input class="shadow appearance-none border border-white rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
                     </div>
                     <div class="flex items-center justify-between">
                     <button class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
