@@ -386,3 +386,95 @@
       font-size: 12px;
     }
   }
+
+@media screen and (max-width: 395px) {
+  #main-section {
+    display: block;
+    width: 100%;
+  }
+  #main-section > div {
+    width: 100%;
+    padding-right: 10px;
+  }
+  .thumb-nail {
+    display: none;
+  }
+}
+/*details section*/
+
+.company-name {
+  font-weight: 700;
+  
+  margin-bottom: 15px;
+}
+h1 {
+  max-width: 350px;
+  font-weight: 700;
+  font-size: 30px;
+ 
+  margin-bottom: 20px;
+}
+.desc, old-button {
+  max-width: 350px;
+ 
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.price .new-price {
+  display: inline-block;
+  font-size: 20px;
+ 
+  font-weight: 700;
+  margin-right: 15px;
+}
+.discount {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 3px;
+  border-radius: 4px;
+}
+.old-price {
+  display: block;
+}
+@media screen and (max-width: 395px) {
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+}
+
+
+@media screen and (max-width: 395px) {
+  .quantity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+}
+button:hover {
+  opacity: 0.7;
+}
+i {
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--white);
+}
+
+/*i finished the desktop layout*/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
