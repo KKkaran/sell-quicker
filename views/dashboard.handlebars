@@ -2,19 +2,19 @@
     
     <form>
     <div class="form-group">
-        <label for="postTitle">Title of Post:</label>
+        <label for="postTitle" class="text-lg">Title of Post:</label>
         <input type="text" class="form-control" id="postTitle" placeholder="title goes here..." required>
     </div>
     
         <br>
     <div class="form-group">
-        <label for="description">Post Description:</label>
+        <label for="description" class="text-lg">Post Description:</label>
         <textarea class="form-control" id="description" rows="8" required></textarea>
     </div>
     <br>
-    <div class="form-group">
+    <div class="form-group text-gray-900 ">
         
-        <select name="categories" id="categ">
+        <select name="categories" id="categ" class="bg-gray-300">
             <option value="">Pick a category</option>
                 {{#each categ.categories as |c|}}
                     <option value={{c.id}}>{{c.category_name}}</option>
@@ -23,15 +23,15 @@
     </div>
         <br>
     <div>
-        <button type="submit" class="btn btn-primary go">POST</button>
+        <button type="submit" class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline go">POST</button>
     </div>
     </form>
 </div>
 
-<div class="container hh">
+<div class="container hh text">
         
-        <h2>History:</h2>
-       <div class="oldPosts">
+        <h2 class="text-2xl">History:</h2><br>
+       <div class="oldPosts ">
 
        </div>
 </div>
@@ -39,5 +39,5 @@
 
 
 
-
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="/js/dashboard.js"></script>

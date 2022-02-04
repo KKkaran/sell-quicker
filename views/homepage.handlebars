@@ -1,21 +1,22 @@
-<div class="container header">
-        <h2>Welcome, 
+<div class="container header text-emerald-500">
+        <h1 class="text-emerald-500 text-2xl">Welcome, 
             {{#if posts.login}}
                 {{posts.username}}
             {{else}}
                 Guest
             {{/if}}
-        </h2>
+        </h1>
 </div>
+<br>
 <div class="container">
-    <div>
-        <select name="categories" id="categ">
+    <div class="text-gray-900 ">
+        <select name="categories" id="categ" class="bg-gray-300">
             <option value="">Pick a category</option>
         {{#each posts.categories as |c|}}
             <option value={{c.category_name}}>{{c.category_name}}</option>
         {{/each}}
     </select>
-        <button class="shortlist">Search</button>
+        <button class="shortlist bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Search</button>
     </div>
     <br>
     {{#if posts}}
@@ -25,13 +26,13 @@
                 <div class="card {{post.category.category_name}}">
                     <div class="card-header">
                         <div class="d-flex justify-content-between ">
-                            <div><a href="/singlePost/{{post.id}}">{{post.title}} </a> by {{post.user.username}}
+                            <div class = "text-gray-700 hover:bg-blue-200 "><a href="/singlePost/{{post.id}}">{{post.title}} </a> by {{post.user.username}}
                             
-                            </div> <div> {{post.date}}</div>
+                            </div> <div > <span class="text-gray-700 bg-white-200">{{post.date}}</span></div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="card-text">{{post.description}}</h4>  
+                    <div class="card-body bg-gray-700 text-white">
+                        <h4 class="card-text text-white">{{post.description}}</h4>  
                     </div>            
                 </div>
                 <br>
@@ -43,4 +44,5 @@
     {{/if}} 
 </div>
 
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="/js/homepage.js"></script>

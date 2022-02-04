@@ -58,15 +58,16 @@ const getId2 = async(e)=>{
             if(h.posts.length>0){
                 h.posts.forEach(element => {
                     const a = $("<div>");a.addClass(`card`).attr("data-postId",element.id);
-                    const b = $("<div>");b.addClass("card-header")
+                    const b = $("<div>");b.addClass("card-header  text-gray")
                     const c = $("<div>");c.addClass("d-flex justify-content-between")
-                    const date = $("<div>").html(element.date)
+                    const date = $("<div>").html(element.date).addClass("text-gray-700 hover:bg-blue-200 ")
                     const by = $("<span>").html(` by ${owner}`)
-                    const d = $("<div>")
+                    const d = $("<div>").addClass("d-flex text-gray-700 ")
                     const link = $("<a />", {
                         name : "link",
                         href : `/singlePost/${element.id}`,
-                        text : element.title
+                        text : element.title,
+                        class: "text-gray-700 hover:bg-blue-200 "
                     });
                     //const editIcon = $("<a>")
                     //deleteIcon
@@ -87,7 +88,7 @@ const getId2 = async(e)=>{
                     img2.attr('src',"https://cdn-icons-png.flaticon.com/128/2919/2919592.png");
                     editIcon.append(img2)
 
-                    const desc = $("<div>").addClass("card-body")
+                    const desc = $("<div>").addClass("card-body bg-gray-700 text-white")
                     const html = $("<h4>").addClass("card-text").html(element.description)
                     desc.append(html)
                     a.append(b.append(c.append(d.append(link,deleteIcon,editIcon),date)),desc)

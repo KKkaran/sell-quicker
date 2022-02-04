@@ -25,7 +25,7 @@ app.use(
         saveUninitialized:false,
         store: new SequelizeStore({
             db: seq
-        })
+    })
 }))
 
 app.use(express.static(path.join(__dirname,"public")));

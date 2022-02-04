@@ -1,43 +1,42 @@
 <div class="container">
     <div class="d-flex flex-column flex-md-row justify-content-around ">
-        <form class="border border-dark p-3 bg-light form-login">
+        <form class="font-mono bg-gray-900 text-emerald-500 shadow-md border border-white rounded  px-8 pt-6 pb-8 mb-4 form-login">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                <label class="block text-sm font-bold mb-2" for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                <input type="password" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline form-control" id="exampleInputPassword1" placeholder="Password" required>
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <br>
+            <button type="submit" class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Log In</button>
         </form>
         <br>
-        <form class="border border-dark p-3 bg-light form-signup">
+        <form class="font-mono bg-gray-900 text-emerald-500 shadow-md border border-white rounded  px-8 pt-6 pb-8 mb-4 form-signup">
             <div class="form-group">
                 <label for="usernameSignup">Username</label>
                 <input type="text" class="form-control" id="usernameSignup" aria-describedby="emailHelp" placeholder="Enter username">
             </div>
+            <br>
             <div class="form-group">
                 <label for="emailSignup">Email address</label>
                 <input type="email" class="form-control" id="emailSignup" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone else.</small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="passwordSignup">Password</label>
                 <input type="password" class="form-control" id="passwordSignup" placeholder="Password">
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <br>
+
+            <button type="submit" class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign Up</button>
         </form>
     </div>
 </div>
 
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="/js/login.js"></script>
