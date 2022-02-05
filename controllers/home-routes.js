@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
         const categories = categoryData.map(r=>r.get({plain:true}))
         const post = dbPostData.map(r=>r.get({plain:true}))
         const updatedPosts = post.map(r=>{
-          r.date = require("moment")(r.createdAt).format("LLLL")
+          r.date = require("moment")(r.createdAt).format("MM/DD/YYYY")
       })
         const posts = {
           posts: post,
@@ -79,7 +79,7 @@ router.get('/', (req, res) => {
           const postss = posts.posts;
           console.log(posts.username)
           postss.map(r=>{
-               r.date = require("moment")(r.createdAt).format("LLLL")
+               r.date = require("moment")(r.createdAt).format("MM/DD/YYYY")
           })
           
           console.log(postss)
@@ -127,7 +127,7 @@ router.get('/singlePost/:id',(req,res)=>{
       //     r.date = require("moment")(r.createdAt).format("LLLL")
       // })
       const ggg = post.createdAt;
-      post.date = require("moment")(ggg).format("LLLL")
+      post.date = require("moment")(ggg).format("MM/DD/YYYY")
       const updatedPost = {
           post:post,
           //userId:req.session.user_id
