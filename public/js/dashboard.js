@@ -60,14 +60,14 @@ const getId2 = async(e)=>{
                     const a = $("<div>");a.addClass(`card`).attr("data-postId",element.id);
                     const b = $("<div>");b.addClass("card-header  text-gray")
                     const c = $("<div>");c.addClass("d-flex justify-content-between")
-                    const date = $("<div>").html(element.date).addClass("text-gray-700 hover:bg-blue-200 ")
+                    const date = $("<div>").html(element.date).addClass("text-gray-700 hover:bg-blue-200 text-xs")
                     const by = $("<span>").html(` by ${owner}`)
                     const d = $("<div>").addClass("d-flex text-gray-700 ")
                     const link = $("<a />", {
                         name : "link",
                         href : `/singlePost/${element.id}`,
                         text : element.title,
-                        class: "text-gray-700 hover:bg-blue-200 "
+                        class: "text-gray-700 hover:bg-blue-200 text-sm"
                     });
                     //const editIcon = $("<a>")
                     //deleteIcon

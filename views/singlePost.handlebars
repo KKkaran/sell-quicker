@@ -1,22 +1,33 @@
 <br>  
-    <div class="container card">
+    <div class="container">
+        <div class="card">
             <div class="card-header">
     
-                <div class="d-flex justify-content-between">
-                    <div><strong>{{updatedPost.post.title}}</strong> by <strong>{{updatedPost.post.user.username}}</strong></div> <div> {{updatedPost.post.date}}</div>
+                <div class="d-flex justify-content-between text-left">
+                    
+                    <div class="text-gray-700">
+                        <span class="text-md font-black">{{updatedPost.post.title}}</span> by <span class="text-xs font-bold">{{updatedPost.post.user.username}}</span>
+                    </div> 
+                    
+                    <div class="text-gray-700 text-xs font-bold text-right"> {{updatedPost.post.date}}</div>
                 </div>
             </div>
-            <div class="card-body">
-                <h4 class="card-text">{{updatedPost.post.description}} </h4>
+            <div class="card-body bg-gray-700">
+                <h4 class="card-text text-light">{{updatedPost.post.description}} </h4>
                 <div>
-                    <p><h5>Comments:</h5>
-                    {{#each updatedPost.post.comments as |c|}} 
+                    <br>
+                    <p><h5 class="text-light font-black text-lg">Comments:</h5>
+                    <div class="text-light">
+                        {{#each updatedPost.post.comments as |c|}} 
                         {{c.comment_text}} ------- {{c.user.username}}
                         <br> 
                     {{/each}}
+                    </div>
                 </p>
                 </div>
             </div>            
+    </div>
+
     </div>
 
     <div class="container">
@@ -26,7 +37,7 @@
                 <input type="text" class="form-control" id="commentText" aria-describedby="emailHelp" placeholder="Leave a Comment..." required>
             </div>
         <br>
-            <button type="submit" class="btn btn-primary">Comment</button>
+            <button type="submit" class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Comment</button>
         </form>
 
 

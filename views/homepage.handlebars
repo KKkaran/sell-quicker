@@ -25,10 +25,12 @@
             {{#each posts.posts as |post| }}
                 <div class="card {{post.category.category_name}}">
                     <div class="card-header">
-                        <div class="d-flex justify-content-between ">
-                            <div class = "text-gray-700 hover:bg-blue-200 "><a href="/singlePost/{{post.id}}">{{post.title}} </a> by {{post.user.username}}
+                        <div class="d-flex justify-content-between text-left">
+                            <div class = "text-gray-700 "><a class="hover:bg-blue-200 text-md font-black" href="/singlePost/{{post.id}}">{{post.title}} </a> by <span class="text-xs font-bold">
+                                {{post.user.username}}
+                            </span>
                             
-                            </div> <div > <span class="text-gray-700 bg-white-200">{{post.date}}</span></div>
+                            </div> <div class="text-right text-xs font-bold"> <span class="text-gray-700 bg-white-200 ">{{post.date}}</span></div>
                         </div>
                     </div>
                     <div class="card-body bg-gray-700 text-white">
