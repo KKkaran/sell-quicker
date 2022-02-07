@@ -24,7 +24,7 @@ To view other ads and your own ads go to the home page!
 
 ## Credits
 
-The lis of collaborators:
+The list of collaborators:
 
 * [Karan Sodhi](https://github.com/KKkaran)
 * [Avneet](https://github.com/avneetk3)
