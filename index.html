@@ -79,14 +79,18 @@
     
     
 </div>
-<div class = "space-y-6 inset-x-0 bottom-0 px-20">
-  <p class= "my-8 max-w-full text-xl underline">Comments</p>
-  
-  <textarea name="comment" form="usrform">Enter text here...</textarea>
-  <input  type="submit" value="Submit">
-    </div>
-    
+
+<div class="container space-y-6 inset-x-0 bottom-0 px-20">
+    <form class="addComment">
+        <div class="form-group">
+            <br><br>
+            <input type="text" class="form-control" id="commentText" aria-describedby="emailHelp" placeholder="Leave a Comment..." required>
+        </div>
+    <br>
+        <button type="submit" class="bg-emerald-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Comment</button>
     </form>
+
+
 </div>
   <script src="show.js"></script>
   <script src="main.js"></script>
