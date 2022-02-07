@@ -9,13 +9,14 @@ Let Sell-Quicker be your solution with our limitless users, you’re guaranteed 
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
+* [Features](#features)
 
 ## Usage
 Go to the [website](https://sellquicker.herokuapp.com/) and create an account.
 
 ![Preview](./images/login.png)
 
-After creating an accounr proceed to the dashboard page and make your first post!
+After creating an account proceed to the dashboard page and make your first post!
 
 To view other ads and your own ads go to the home page!
 
@@ -36,3 +37,11 @@ The lis of collaborators:
 ![Javascript](https://img.shields.io/badge/Javascript-75%25-yellow)
 ![Handlebars](https://img.shields.io/badge/Handlebars-25%25-orange)
 
+
+## Features
+
+One of our features is the ability to Edit and Delete your previous Ads. Just simply click the pencil icon to edit and the trash icon to delete.
+
+![features](./images/features.png)
+
+Stay tuned for more features to come!
