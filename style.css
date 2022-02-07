@@ -51,27 +51,7 @@
     margin-bottom: 20px;
   }
   
-  .show-menu {
-    display: none;
-  }
-  .show-menu,
-  .close-menu {
-    width: 20px;
-    height: 20px;
-    margin-right: 15px;
-  }
-  .close-menu {
-    width: 70%;
-    background-color: var(--white);
-    padding-bottom: 10px;
-    padding-left: 30px;
-  }
-  .show-menu i,
-  .close-menu i {
-    display: block;
-    color: var(--title-color);
-    line-height: 24px;
-  }
+
   
   nav {
     margin-left: 20px;
@@ -131,43 +111,7 @@
   nav.mobile ul li a {
     color: var(--title-color);
   }
-  @media screen and (max-width: 560px) {
-    header {
-      /* padding-left: 10px; */
-      padding-right: 10px;
-      border-bottom: none;
-    }
-    .show-menu {
-      display: block;
-    }
-    .logo {
-      width: 100px;
-    }
-    nav {
-      display: none;
-    }
-  }
   
-  /*workink with javascript*/
-  .message {
-    display: none;
-    position: absolute;
-    top: 43px;
-    right: -60px;
-    width: 250px;
-    height: 150px;
-    padding-bottom: 20px;
-  }
-  @media screen and (max-width: 400px) {
-    .message {
-      top: 48px;
-      left: -203px;
-      right: unset;
-      min-width: 250px;
-      z-index: 111111;
-      box-shadow: unset;
-    }
-  }
   h2 {
     font-size: 14px;
     font-weight: 700;
